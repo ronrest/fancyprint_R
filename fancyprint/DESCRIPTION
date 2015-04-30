@@ -1,0 +1,9 @@
+Package: fancyprint
+Type: Package
+Title: Pretty formatting of ascii console output 
+Version: 0.0.1
+Date: 2015-05-01
+Author: Ronny Restrepo
+Maintainer: Who to complain to <ronny.coding@gmail.com>
+Description: Convenient functions for formatting ascii output text. Eg, if you want key value pairs to be printed out, with a certain amount of spacing so that values all line up and with with customisable separators.  
+License: GPL v2
