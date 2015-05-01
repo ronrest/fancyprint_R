@@ -1,13 +1,10 @@
-
-#' =============================================================================
-#'                                                                       PRINTKV
-#' =============================================================================
+#' printkv
+#' 
 #' Print a key value pair. You can specify that the value be positioned at a 
 #' certain minimum column number, which can be used to line up multiple 
 #' prinkv() function calls. 
 #' You can also specity how the gap between the key and the value should be 
 #' filled up, aswell as the separator. 
-#'
 #' 
 #' @param key the content of the key 
 #' @param val content of the value
@@ -22,12 +19,11 @@
 #'        places
 #'        
 #' @keywords fancyprint, ascii, print
+#' @examples
+#' printkv("age", 34, sep=": ", fill=10, fill_char=".") 
+#' printkv("age", 56) 
 #' @export
-#' @examples:
-#' printkv("age", age, sep=": ", fill=10, fill_char=".") 
-#' age.......: 34
-#' 
-#' =============================================================================
+
 printkv <- function(key, val, sep=" = ", fill=0, fill_char=" ", round=FALSE){
     # TODO: check that the inputs are of the correct data type.
     # TODO: consider looking at c-style formatting to make it more efficient, 
@@ -60,5 +56,4 @@ printkv <- function(key, val, sep=" = ", fill=0, fill_char=" ", round=FALSE){
     #                                                     Print out the Result
     #-------------------------------------------------------------------------
     print(paste(key, val, sep=sep))
-    
 }
