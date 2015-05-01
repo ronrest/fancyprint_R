@@ -4,7 +4,7 @@
 \alias{printkv}
 \title{printkv}
 \usage{
-printkv(key, val, sep = " = ", fill = 0, fill_char = " ", round = FALSE)
+printkv(key, val, sep = ": ", fill = 0, fill_char = " ", round = FALSE)
 }
 \arguments{
 \item{key}{the content of the key}
@@ -31,8 +31,9 @@ You can also specity how the gap between the key and the value should be
 filled up, aswell as the separator.
 }
 \examples{
-printkv("age", 34, sep=": ", fill=10, fill_char=".")
-printkv("age", 56)
+printkv("name", "Joe", sep="= ", fill=10, fill_char=".")
+printkv("age", 34, sep="= ", fill=10, fill_char=".")
+#' printkv("age", 56)
 }
 \keyword{ascii,}
 \keyword{fancyprint,}
