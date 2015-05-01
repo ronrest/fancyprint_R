@@ -20,8 +20,10 @@
 #'        
 #' @keywords fancyprint, ascii, print
 #' @examples
+#' printkv("name", "Joe", sep="= ", fill=10, fill_char=".") 
 #' printkv("age", 34, sep="= ", fill=10, fill_char=".") 
-#' printkv("age", 56) 
+#' #' printkv("age", 56) 
+#' 
 #' @export
 
 printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE){
