@@ -20,11 +20,11 @@
 #'        
 #' @keywords fancyprint, ascii, print
 #' @examples
-#' printkv("age", 34, sep=": ", fill=10, fill_char=".") 
+#' printkv("age", 34, sep="= ", fill=10, fill_char=".") 
 #' printkv("age", 56) 
 #' @export
 
-printkv <- function(key, val, sep=" = ", fill=0, fill_char=" ", round=FALSE){
+printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE){
     # TODO: check that the inputs are of the correct data type.
     # TODO: consider looking at c-style formatting to make it more efficient, 
     #       esp when generating the gap.
