@@ -40,6 +40,8 @@
 
 printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE, 
                     vas=TRUE){
+    # TODO: BUG: round = TRUE leads to rounding to 1 decimal, should be to 
+    #            nearest int
     # TODO: check that the inputs are of the correct data type.
     # TODO: consider looking at c-style formatting to make it more efficient, 
     #       esp when generating the gap.
