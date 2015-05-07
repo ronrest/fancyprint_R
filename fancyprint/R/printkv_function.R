@@ -40,7 +40,6 @@
 
 strkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE, 
                     vas=TRUE){
-    # TODO: BUG: returns value with round brackets ALWAYS
     # TODO: BUG: round = TRUE leads to rounding to 1 decimal, should be to 
     #            nearest int
     # TODO: check that the inputs are of the correct data type.
@@ -72,7 +71,7 @@ strkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE,
     #-------------------------------------------------------------------------
     #                                                     Print out the Result
     #-------------------------------------------------------------------------
-    if (vas){
+    if (vas & (length(val)>1)){
         val = paste(val, collapse=", ")
         val = paste("(", val, ")", sep="")
         return(paste(key, val, sep=sep))
