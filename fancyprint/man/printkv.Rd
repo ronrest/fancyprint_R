@@ -46,7 +46,7 @@ printkv("age", 56)
 printkv("rank", c(1,2,3,4))
 [1] "rank: (1,2,3,4)"
 
-printkv("rank", c(1,2,3,4), vecval.as.string=FALSE)
+printkv("rank", c(1,2,3,4), vas=FALSE)
 [1] "rank: 1" "rank: 2" "rank: 3" "rank: 4"
 }
 \keyword{ascii,}
