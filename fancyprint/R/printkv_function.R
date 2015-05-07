@@ -17,22 +17,34 @@
 #'        If round is FALSE (Default), then no rounding occurs. 
 #'        If round is an integer, then val is rounded to that many decimal 
 #'        places
+#' @param vas (boolean) Vectors As Strings. If a vector is fed as the val 
+#'        argument, should it convert the entire vector into a string? This will 
+#'        print all the values of the vector as a string if TRUE is used. 
+#'        FALSE = print a key value pair for each element of the vector. 
+#'        See the examples section to see how this is used. 
+#'        (DEFAULT = TRUE)  
 #'        
 #' @keywords fancyprint, ascii, print
 #' @examples
 #' printkv("name", "Joe", sep="= ", fill=10, fill_char=".") 
 #' printkv("age", 34, sep="= ", fill=10, fill_char=".") 
-#' #' printkv("age", 56) 
+#' printkv("age", 56) 
+#' 
+#' printkv("rank", c(1,2,3,4))
+#' [1] "rank: (1,2,3,4)"
+#' 
+#' printkv("rank", c(1,2,3,4), vas=FALSE)
+#' [1] "rank: 1" "rank: 2" "rank: 3" "rank: 4"
 #' 
 #' @export
 
-printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE){
+printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE, 
+                    vas=TRUE){
     # TODO: check that the inputs are of the correct data type.
     # TODO: consider looking at c-style formatting to make it more efficient, 
     #       esp when generating the gap.
-    # TODO: Have a parameter "round", so that if the value argument is a numeric
-    #       then it should round to that number of decimal places. 
-    # 
+    # TODO: have an option max.vec to specify an upper limit to the number of 
+    #       elements in a vector to print out before it show ... dots. 
     
     #-------------------------------------------------------------------------
     #                                 Fill with the necessary amount of spaces
@@ -57,5 +69,12 @@ printkv <- function(key, val, sep=": ", fill=0, fill_char=" ", round=FALSE){
     #-------------------------------------------------------------------------
     #                                                     Print out the Result
     #-------------------------------------------------------------------------
-    print(paste(key, val, sep=sep))
+    if (vas){
+        val = paste(val, collapse=", ")
+        val = paste("(", val, ")", sep="")
+        print(paste(key, val, sep=sep))
+    } else {
+        print(paste(key, val, sep=sep))
+    }
+    
 }
